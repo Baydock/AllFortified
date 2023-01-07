@@ -14,7 +14,6 @@ using Il2CppAssets.Scripts.Utils;
 using Il2CppNinjaKiwi.Common;
 using MelonLoader;
 using System.Linq;
-using System.Threading;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.EventSystems;

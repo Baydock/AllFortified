@@ -108,8 +108,8 @@ namespace AllFortified {
         /// <exception cref="ArgumentException">If the message to hide is not exactly 4 chars long</exception>
         public static string RemoveMessage(string hiddenIn, string message) {
             string binary = ToInvisibleBinary(message);
-            for(int i = message.Length - 64; i > -1; i -= 64) {
-                if (hiddenIn.Substring(i, 64).Equals(message)) {
+            for (int i = message.Length - 64; i > -1; i -= 64) {
+                if (hiddenIn.Substring(i, 64).Equals(binary)) {
                     hiddenIn = hiddenIn.Remove(i, 64);
                     i += 64; // cancel out index change since text was just removed
                 }
