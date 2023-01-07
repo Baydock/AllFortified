@@ -1,0 +1,60 @@
+ManifestFileVersion: 0
+CRC: 1017818246
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: c9514cbfeb41b1bde4ed76d48b341ff6
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: c21d61fe394c58399df3c6fb5c7c99b3
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Sprites/Purple/FortifiedCamoPurple.png
+- Assets/Sprites/Zebra/FortifiedCamoRegrowZebra.png
+- Assets/Sprites/Red/FortifiedCamoRed.png
+- Assets/Sprites/Black/FortifiedRegrowBlack.png
+- Assets/Sprites/Green/FortifiedCamoRegrowGreen.png
+- Assets/Sprites/Yellow/FortifiedCamoRegrowYellow.png
+- Assets/Sprites/Pink/FortifiedCamoPink.png
+- Assets/Sprites/Green/FortifiedRegrowGreen.png
+- Assets/Sprites/Zebra/FortifiedZebra.png
+- Assets/Sprites/Green/FortifiedGreen.png
+- Assets/Sprites/Blue/FortifiedCamoRegrowBlue.png
+- Assets/Sprites/Yellow/FortifiedCamoYellow.png
+- Assets/Sprites/Red/FortifiedRegrowRed.png
+- Assets/Sprites/Yellow/FortifiedYellow.png
+- Assets/Sprites/White/FortifiedCamoRegrowWhite.png
+- Assets/Sprites/Pink/FortifiedCamoRegrowPink.png
+- Assets/Sprites/Zebra/FortifiedCamoZebra.png
+- Assets/Sprites/White/FortifiedWhite.png
+- Assets/Sprites/Rainbow/FortifiedCamoRegrowRainbow.png
+- Assets/Sprites/Purple/FortifiedCamoRegrowPurple.png
+- Assets/Sprites/Blue/FortifiedRegrowBlue.png
+- Assets/Sprites/Black/FortifiedBlack.png
+- Assets/Sprites/Pink/FortifiedPink.png
+- Assets/Sprites/Black/FortifiedCamoRegrowBlack.png
+- Assets/Sprites/Green/FortifiedCamoGreen.png
+- Assets/Sprites/Rainbow/FortifiedRegrowRainbow.png
+- Assets/Sprites/Rainbow/FortifiedCamoRainbow.png
+- Assets/Sprites/Purple/FortifiedPurple.png
+- Assets/Sprites/Black/FortifiedCamoBlack.png
+- Assets/Sprites/Purple/FortifiedRegrowPurple.png
+- Assets/Sprites/Yellow/FortifiedRegrowYellow.png
+- Assets/Sprites/Pink/FortifiedRegrowPink.png
+- Assets/Sprites/AllFortified.png
+- Assets/Sprites/Red/FortifiedRed.png
+- Assets/Sprites/Zebra/FortifiedRegrowZebra.png
+- Assets/Sprites/White/FortifiedRegrowWhite.png
+- Assets/Sprites/Rainbow/FortifiedRainbow.png
+- Assets/Sprites/Blue/FortifiedBlue.png
+- Assets/Sprites/TestBloon/FortifiedTestBloon.png
+- Assets/Sprites/White/FortifiedCamoWhite.png
+- Assets/Sprites/Blue/FortifiedCamoBlue.png
+- Assets/Sprites/Red/FortifiedCamoRegrowRed.png
+Dependencies: []

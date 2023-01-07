@@ -1,0 +1,11 @@
+
+**/.vs/
+**/bin/
+**/obj/
+**/Temp/
+**/Logs/
+**/Library/
+**/UserSettings/
+AllFortifiedUnity/**.csproj
+AllFortifiedUnity/**.sln
+AllFortifiedUnity/UpgradeLog.htm
