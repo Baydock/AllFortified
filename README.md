@@ -1,4 +1,4 @@
-<img align="right" height="100" alt="Icon" src="Icon.png"/>
+<img align="right" height="100" alt="Icon" src="Icon.png" onclick="return false;"/>
 
 # AllFortified
  Adds a fortified variant for every bloon that lacks one, and every fortified bloon that had non-fortified children now have the fortified variants.\
