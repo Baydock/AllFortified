@@ -11,8 +11,10 @@ using Il2CppAssets.Scripts.Unity.UI_New.ChallengeEditor;
 using Il2CppAssets.Scripts.Unity.UI_New.InGame;
 using Il2CppAssets.Scripts.Unity.UI_New.InGame.BloonMenu;
 using Il2CppAssets.Scripts.Utils;
+using Il2CppInterop.Runtime.InteropTypes.Arrays;
 using Il2CppNinjaKiwi.Common;
 using MelonLoader;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
@@ -160,7 +162,7 @@ namespace AllFortified {
                 FromRandom = false;
                 ApplyAllFortifiedToDCM(__instance);
             } else
-                AllFortifiedToggle.isOn = MessageHider.HasMessage(__instance.dcm.name, AllFortified.Identifier);
+                AllFortifiedToggle.isOn = AllFortified.IsAllFortified(__instance.dcm);
         }
 
         [HarmonyPatch(typeof(ChallengeEditor), nameof(ChallengeEditor.Randomize))]
@@ -170,21 +172,41 @@ namespace AllFortified {
             FromRandom = true;
         }
 
-        // As long as this is a postfix, nk already sanitizes the name in the input field for me to my favor
         [HarmonyPatch(typeof(ChallengeEditor), nameof(ChallengeEditor.ApplyValues))]
         [HarmonyPostfix]
         public static void ApplyAllFortifiedToDCM(ChallengeEditor __instance) {
-            bool hasIdentifier = MessageHider.HasMessage(__instance.dcm.name, AllFortified.Identifier);
+            bool hasIdentifier = AllFortified.IsAllFortified(__instance.dcm);
             if (AllFortifiedToggle.isOn && !hasIdentifier)
-                __instance.dcm.name = MessageHider.HideMessage(__instance.dcm.name, AllFortified.Identifier);
+                AllFortified.AddAllFortified(__instance.dcm);
             else if (!AllFortifiedToggle.isOn && hasIdentifier)
-                __instance.dcm.name = MessageHider.RemoveMessage(__instance.dcm.name, AllFortified.Identifier);
+                AllFortified.RemoveAllFortified(__instance.dcm);
+        }
+
+        [HarmonyPatch(typeof(PlayerChallengeManager), nameof(PlayerChallengeManager.ValidateTitle))]
+        [HarmonyPrefix]
+        public static void AllowHiddenInfoChars() {
+            TitleSettings titleSettings = PlayerChallengeManager.BrowserSettings.title;
+            List<char> newAllowedSymbols = titleSettings.allowedSymbols.ToList();
+
+            bool newAdded = false;
+            if (!newAllowedSymbols.Contains(MessageHider.ZeroBit)) {
+                newAllowedSymbols.Add(MessageHider.ZeroBit);
+                newAdded = true;
+            }
+            if (!newAllowedSymbols.Contains(MessageHider.OneBit)) {
+                newAllowedSymbols.Add(MessageHider.OneBit);
+                newAdded = true;
+            }
+            titleSettings.maxLength = short.MaxValue;
+
+            if (newAdded)
+                titleSettings.allowedSymbols = newAllowedSymbols.ToArray();
         }
 
         [HarmonyPatch(typeof(ChallengeEditorPlay), nameof(ChallengeEditorPlay.ShowModIcons))]
         [HarmonyPostfix]
         public static void ShowAllFortifiedModifier(ChallengeEditorPlay __instance) {
-            if (MessageHider.HasMessage(__instance.dcm.name, AllFortified.Identifier)) {
+            if (AllFortified.IsAllFortified(__instance.dcm)) {
                 GameObject allFortified = Object.Instantiate(__instance.modifierPrefab, __instance.modifierContent);
 
                 allFortified.GetComponentInChildren<Image>().sprite = AllFortified.LoadIcon();
@@ -208,7 +230,7 @@ namespace AllFortified {
         [HarmonyPatch(typeof(ChallengeRulesScreen), nameof(ChallengeRulesScreen.SetUi))]
         [HarmonyPostfix]
         public static void ShowAllFortifiedModifierInRules(ChallengeRulesScreen __instance) {
-            if (MessageHider.HasMessage(__instance.dcm.name, AllFortified.Identifier)) {
+            if (AllFortified.IsAllFortified(__instance.dcm)) {
                 GameObject allFortified = Object.Instantiate(__instance.modifierPrefab, __instance.gameRuleContent);
                 allFortified.GetComponentInChildren<NK_TextMeshProUGUI>().localizeKey = AllFortified.LocalizeKey;
                 allFortified.GetComponentInChildren<Image>().sprite = AllFortified.LoadIcon();
@@ -220,7 +242,7 @@ namespace AllFortified {
         [HarmonyPatch(typeof(DailyChallengeModel), nameof(DailyChallengeModel.ApplyDCToGameModel))]
         [HarmonyPostfix]
         public static void ApplyAllFortified(DailyChallengeModel dcm, GameModel gameModel) {
-            if (MessageHider.HasMessage(dcm.name, AllFortified.Identifier)) {
+            if (AllFortified.IsAllFortified(dcm)) {
                 foreach (RoundSetModel roundSet in gameModel.roundSets)
                     foreach (RoundModel round in roundSet.rounds)
                         foreach (BloonGroupModel group in round.groups)

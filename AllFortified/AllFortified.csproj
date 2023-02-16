@@ -10,7 +10,7 @@
   </PropertyGroup>
 
 	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
-		<Copy SourceFiles="$(TargetPath)" DestinationFolder="D:\Games\steamapps\steamapps\common\BloonsTD6\Mods" />
+		<Copy SourceFiles="$(TargetPath)" DestinationFolder="C:\Users\xande\Games\steam\steamapps\common\BloonsTD6\Mods" />
 		<Message Text="$(TargetFileName) -&gt; BloonsTD6/Mods" Importance="high" />
 	</Target>
 
@@ -25,43 +25,43 @@
 
 	<ItemGroup>
 	  <Reference Include="0Harmony">
-	    <HintPath>..\..\..\..\..\Games\epicgames\BloonsTD6\MelonLoader\net6\0Harmony.dll</HintPath>
+	    <HintPath>..\..\..\..\..\..\Games\steam\steamapps\common\BloonsTD6\MelonLoader\net6\0Harmony.dll</HintPath>
 	  </Reference>
 	  <Reference Include="Assembly-CSharp">
-	    <HintPath>..\..\..\..\..\Games\epicgames\BloonsTD6\MelonLoader\Il2CppAssemblies\Assembly-CSharp.dll</HintPath>
+	    <HintPath>..\..\..\..\..\..\Games\steam\steamapps\common\BloonsTD6\MelonLoader\Il2CppAssemblies\Assembly-CSharp.dll</HintPath>
 	  </Reference>
 	  <Reference Include="Il2CppInterop.Runtime">
-	    <HintPath>..\..\..\..\..\Games\epicgames\BloonsTD6\MelonLoader\net6\Il2CppInterop.Runtime.dll</HintPath>
+	    <HintPath>..\..\..\..\..\..\Games\steam\steamapps\common\BloonsTD6\MelonLoader\net6\Il2CppInterop.Runtime.dll</HintPath>
 	  </Reference>
 	  <Reference Include="Il2Cppmscorlib">
-	    <HintPath>..\..\..\..\..\Games\epicgames\BloonsTD6\MelonLoader\Il2CppAssemblies\Il2Cppmscorlib.dll</HintPath>
+	    <HintPath>..\..\..\..\..\..\Games\steam\steamapps\common\BloonsTD6\MelonLoader\Il2CppAssemblies\Il2Cppmscorlib.dll</HintPath>
 	  </Reference>
 	  <Reference Include="Il2CppNinjaKiwi.Common">
-	    <HintPath>..\..\..\..\..\Games\steamapps\steamapps\common\BloonsTD6\MelonLoader\Il2CppAssemblies\Il2CppNinjaKiwi.Common.dll</HintPath>
+	    <HintPath>..\..\..\..\..\..\Games\steam\steamapps\common\BloonsTD6\MelonLoader\Il2CppAssemblies\Il2CppNinjaKiwi.Common.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Il2CppSystem.Core">
+	    <HintPath>..\..\..\..\..\..\Games\steam\steamapps\common\BloonsTD6\MelonLoader\Il2CppAssemblies\Il2CppSystem.Core.dll</HintPath>
 	  </Reference>
 	  <Reference Include="MelonLoader">
-	    <HintPath>..\..\..\..\..\Games\epicgames\BloonsTD6\MelonLoader\net6\MelonLoader.dll</HintPath>
+	    <HintPath>..\..\..\..\..\..\Games\steam\steamapps\common\BloonsTD6\MelonLoader\net6\MelonLoader.dll</HintPath>
 	  </Reference>
 	  <Reference Include="Unity.Addressables">
-	    <HintPath>..\..\..\..\..\Games\epicgames\BloonsTD6\MelonLoader\Il2CppAssemblies\Unity.Addressables.dll</HintPath>
+	    <HintPath>..\..\..\..\..\..\Games\steam\steamapps\common\BloonsTD6\MelonLoader\Il2CppAssemblies\Unity.Addressables.dll</HintPath>
 	  </Reference>
 	  <Reference Include="Unity.ResourceManager">
-	    <HintPath>..\..\..\..\..\Games\epicgames\BloonsTD6\MelonLoader\Il2CppAssemblies\Unity.ResourceManager.dll</HintPath>
+	    <HintPath>..\..\..\..\..\..\Games\steam\steamapps\common\BloonsTD6\MelonLoader\Il2CppAssemblies\Unity.ResourceManager.dll</HintPath>
 	  </Reference>
 	  <Reference Include="Unity.TextMeshPro">
-	    <HintPath>..\..\..\..\..\Games\steamapps\steamapps\common\BloonsTD6\MelonLoader\Il2CppAssemblies\Unity.TextMeshPro.dll</HintPath>
+	    <HintPath>..\..\..\..\..\..\Games\steam\steamapps\common\BloonsTD6\MelonLoader\Il2CppAssemblies\Unity.TextMeshPro.dll</HintPath>
 	  </Reference>
 	  <Reference Include="UnityEngine.AssetBundleModule">
-	    <HintPath>..\..\..\..\..\Games\steamapps\steamapps\common\BloonsTD6\MelonLoader\Il2CppAssemblies\UnityEngine.AssetBundleModule.dll</HintPath>
+	    <HintPath>..\..\..\..\..\..\Games\steam\steamapps\common\BloonsTD6\MelonLoader\Il2CppAssemblies\UnityEngine.AssetBundleModule.dll</HintPath>
 	  </Reference>
 	  <Reference Include="UnityEngine.CoreModule">
-	    <HintPath>..\..\..\..\..\Games\epicgames\BloonsTD6\MelonLoader\Il2CppAssemblies\UnityEngine.CoreModule.dll</HintPath>
-	  </Reference>
-	  <Reference Include="UnityEngine.ImageConversionModule">
-	    <HintPath>..\..\..\..\..\Games\epicgames\BloonsTD6\MelonLoader\Il2CppAssemblies\UnityEngine.ImageConversionModule.dll</HintPath>
+	    <HintPath>..\..\..\..\..\..\Games\steam\steamapps\common\BloonsTD6\MelonLoader\Il2CppAssemblies\UnityEngine.CoreModule.dll</HintPath>
 	  </Reference>
 	  <Reference Include="UnityEngine.UI">
-	    <HintPath>..\..\..\..\..\Games\epicgames\BloonsTD6\MelonLoader\Il2CppAssemblies\UnityEngine.UI.dll</HintPath>
+	    <HintPath>..\..\..\..\..\..\Games\steam\steamapps\common\BloonsTD6\MelonLoader\Il2CppAssemblies\UnityEngine.UI.dll</HintPath>
 	  </Reference>
 	</ItemGroup>
 

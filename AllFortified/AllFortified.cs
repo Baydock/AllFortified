@@ -3,6 +3,7 @@ using AllFortified.Utils;
 using Il2CppAssets.Scripts.Models.Bloons;
 using Il2CppAssets.Scripts.Models.Bloons.Behaviors;
 using Il2CppAssets.Scripts.Models.GenericBehaviors;
+using Il2CppAssets.Scripts.Models.ServerEvents;
 using Il2CppAssets.Scripts.Unity.Display;
 using UnityEngine;
 using Resources = AllFortified.Properties.Resources;
@@ -11,7 +12,7 @@ namespace AllFortified {
     internal static class AllFortified {
         private static readonly AssetBundle bundle = Resources.GetAssetBundle("allfortified");
 
-        public const string Identifier = "AllF";
+        private const string Identifier = "AllF";
         public const string LocalizeKey = "EditorAllFortified";
 
         public static string[] BloonsToFortify { get; } = { "Black", "Blue", "Green", "Pink", "Purple", "Rainbow", "Red", "White", "Yellow", "Zebra", "TestBloon" };
@@ -86,6 +87,12 @@ namespace AllFortified {
         public static void AddLocalization(Il2CppSystem.Collections.Generic.Dictionary<string, string> defaultTable) {
             defaultTable.Add(LocalizeKey, "All Fortified");
         }
+
+        public static bool IsAllFortified(DailyChallengeModel dcm) => MessageHider.HasMessage(dcm.name, Identifier);
+
+        public static void AddAllFortified(DailyChallengeModel dcm) => dcm.name = MessageHider.HideMessage(dcm.name, Identifier);
+
+        public static void RemoveAllFortified(DailyChallengeModel dcm) => dcm.name = MessageHider.RemoveMessage(dcm.name, Identifier);
 
         private static string GetFortifiedDisplayName(BloonModel bloon) => $"Fortified{(bloon.isCamo ? "Camo" : "")}{(bloon.isGrow ? "Regrow" : "")}{bloon.baseId}";
     }

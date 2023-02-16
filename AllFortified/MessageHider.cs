@@ -9,11 +9,11 @@ namespace AllFortified {
         /// <summary>
         /// Represents a 0 bit with an invisible char
         /// </summary>
-        private const char ZeroBit = '​';
+        public const char ZeroBit = '​';
         /// <summary>
         /// Represents a 1 bit with an invisible char
         /// </summary>
-        private const char OneBit = '­';
+        public const char OneBit = '­';
 
         /// <summary>
         /// Converts a 4 char message into a long
