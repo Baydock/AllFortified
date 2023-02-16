@@ -22,7 +22,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.U2D;
 using UnityEngine.UI;
 
-[assembly: MelonInfo(typeof(AllFortified.Mod), "All Fortified", "1.0.0", "Baydock")]
+[assembly: MelonInfo(typeof(AllFortified.Mod), "All Fortified", "1.0.1", "Baydock")]
 [assembly: MelonGame("Ninja Kiwi", "BloonsTD6")]
 [assembly: MelonColor(255, 177, 72, 27)]
 [assembly: MelonAuthorColor(255, 255, 104, 0)]

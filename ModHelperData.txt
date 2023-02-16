@@ -1,6 +1,6 @@
 ﻿WorksOnVersion = "34.3";
 Name = "All Fortified";
-Version = "1.0.0";
+Version = "1.0.1";
 Author = "Baydock";
 Description = "Adds a fortified variant for every bloon that lacks one, and every fortified bloon that had non-fortified children now have the fortified variants. Additionally, there is now an option in the challenge editor where all bloons are converted to their fortified variants.";
 RepoName = "AllFortified";
