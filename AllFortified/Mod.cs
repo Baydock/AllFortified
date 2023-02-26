@@ -261,29 +261,16 @@ namespace AllFortified {
         public static bool LoadModels(Factory.__c__DisplayClass21_0 __instance, UnityDisplayNode prototype) {
             string objectId = __instance.objectId.guidRef;
             if (!string.IsNullOrEmpty(objectId) && prototype is null) {
-                return !AllFortified.LoadDisplay(objectId, __instance, new System.Action<UnityDisplayNode>(proto => {
-                    SetUpPrototype(proto, __instance.objectId, __instance);
-                    SetUpDisplay(proto, __instance);
-                }));
+                return !AllFortified.LoadDisplay(objectId, __instance, udn => SetUpDisplay(udn, __instance.objectId, __instance));
             }
             return true;
         }
-        private static void SetUpPrototype(UnityDisplayNode proto, PrefabReference protoRef, Factory.__c__DisplayClass21_0 assetFactory) {
-            proto.transform.parent = assetFactory.__4__this.PrototypeRoot;
-            proto.Active = false;
-            proto.gameObject.transform.position = new Vector3(-3000, 0, 0);
-            proto.gameObject.transform.eulerAngles = Vector3.zero;
-            proto.cloneOf = protoRef;
-            assetFactory.__4__this.prototypeHandles[protoRef] = Addressables.Instance.ResourceManager.CreateCompletedOperation(proto.gameObject, "");
-        }
-        private static void SetUpDisplay(UnityDisplayNode proto, Factory.__c__DisplayClass21_0 assetFactory) {
-            UnityDisplayNode display = Object.Instantiate(proto.gameObject, assetFactory.__4__this.DisplayRoot).GetComponent<UnityDisplayNode>();
-
-            display.transform.parent = assetFactory.__4__this.DisplayRoot;
-            display.Active = true;
-            display.cloneOf = proto.cloneOf;
-            assetFactory.__4__this.active.Add(display);
-            assetFactory.onComplete?.Invoke(display);
+        private static void SetUpDisplay(UnityDisplayNode udn, PrefabReference protoRef, Factory.__c__DisplayClass21_0 assetFactory) {
+            udn.transform.parent = assetFactory.__4__this.DisplayRoot;
+            udn.Active = true;
+            udn.cloneOf = protoRef;
+            assetFactory.__4__this.active.Add(udn);
+            assetFactory.onComplete?.Invoke(udn);
         }
 
         [HarmonyPatch(typeof(SpriteAtlas), nameof(SpriteAtlas.GetSprite))]
