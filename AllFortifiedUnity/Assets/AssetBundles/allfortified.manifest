@@ -1,60 +1,115 @@
 ManifestFileVersion: 0
-CRC: 1017818246
+CRC: 3084053745
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: c9514cbfeb41b1bde4ed76d48b341ff6
+    Hash: 1276b0f23b89d3333c2b43aa0733b70c
   TypeTreeHash:
     serializedVersion: 2
-    Hash: c21d61fe394c58399df3c6fb5c7c99b3
+    Hash: 485ad9a845093328db96c9db08afba22
 HashAppended: 0
 ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
 - Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 348327ee673a54c4099aba998533e24c, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 212
   Script: {instanceID: 0}
 - Class: 213
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
-- Assets/Sprites/Purple/FortifiedCamoPurple.png
-- Assets/Sprites/Zebra/FortifiedCamoRegrowZebra.png
-- Assets/Sprites/Red/FortifiedCamoRed.png
-- Assets/Sprites/Black/FortifiedRegrowBlack.png
-- Assets/Sprites/Green/FortifiedCamoRegrowGreen.png
-- Assets/Sprites/Yellow/FortifiedCamoRegrowYellow.png
-- Assets/Sprites/Pink/FortifiedCamoPink.png
-- Assets/Sprites/Green/FortifiedRegrowGreen.png
-- Assets/Sprites/Zebra/FortifiedZebra.png
-- Assets/Sprites/Green/FortifiedGreen.png
-- Assets/Sprites/Blue/FortifiedCamoRegrowBlue.png
-- Assets/Sprites/Yellow/FortifiedCamoYellow.png
-- Assets/Sprites/Red/FortifiedRegrowRed.png
-- Assets/Sprites/Yellow/FortifiedYellow.png
-- Assets/Sprites/White/FortifiedCamoRegrowWhite.png
-- Assets/Sprites/Pink/FortifiedCamoRegrowPink.png
-- Assets/Sprites/Zebra/FortifiedCamoZebra.png
-- Assets/Sprites/White/FortifiedWhite.png
-- Assets/Sprites/Rainbow/FortifiedCamoRegrowRainbow.png
-- Assets/Sprites/Purple/FortifiedCamoRegrowPurple.png
-- Assets/Sprites/Blue/FortifiedRegrowBlue.png
-- Assets/Sprites/Black/FortifiedBlack.png
-- Assets/Sprites/Pink/FortifiedPink.png
-- Assets/Sprites/Black/FortifiedCamoRegrowBlack.png
-- Assets/Sprites/Green/FortifiedCamoGreen.png
-- Assets/Sprites/Rainbow/FortifiedRegrowRainbow.png
-- Assets/Sprites/Rainbow/FortifiedCamoRainbow.png
-- Assets/Sprites/Purple/FortifiedPurple.png
-- Assets/Sprites/Black/FortifiedCamoBlack.png
-- Assets/Sprites/Purple/FortifiedRegrowPurple.png
-- Assets/Sprites/Yellow/FortifiedRegrowYellow.png
-- Assets/Sprites/Pink/FortifiedRegrowPink.png
-- Assets/Sprites/AllFortified.png
-- Assets/Sprites/Red/FortifiedRed.png
-- Assets/Sprites/Zebra/FortifiedRegrowZebra.png
-- Assets/Sprites/White/FortifiedRegrowWhite.png
-- Assets/Sprites/Rainbow/FortifiedRainbow.png
-- Assets/Sprites/Blue/FortifiedBlue.png
-- Assets/Sprites/TestBloon/FortifiedTestBloon.png
-- Assets/Sprites/White/FortifiedCamoWhite.png
-- Assets/Sprites/Blue/FortifiedCamoBlue.png
-- Assets/Sprites/Red/FortifiedCamoRegrowRed.png
+- Assets/Assets/Sprites/Purple/FortifiedCamoPurple.png
+- Assets/Assets/Sprites/Zebra/FortifiedCamoRegrowZebra.png
+- Assets/Assets/Sprites/Red/FortifiedCamoRed.png
+- Assets/Assets/Sprites/Black/FortifiedRegrowBlack.png
+- Assets/Assets/Sprites/Green/FortifiedCamoRegrowGreen.png
+- Assets/Assets/Sprites/Yellow/FortifiedCamoRegrowYellow.png
+- Assets/Assets/Sprites/Pink/FortifiedCamoPink.png
+- Assets/Assets/Prefabs/Pink/FortifiedRegrowPink.prefab
+- Assets/Assets/Sprites/Zebra/FortifiedZebra.png
+- Assets/Assets/Prefabs/Red/FortifiedCamoRed.prefab
+- Assets/Assets/Prefabs/Purple/FortifiedRegrowPurple.prefab
+- Assets/Assets/Prefabs/Blue/FortifiedRegrowBlue.prefab
+- Assets/Assets/Sprites/Blue/FortifiedCamoRegrowBlue.png
+- Assets/Assets/Prefabs/Rainbow/FortifiedCamoRegrowRainbow.prefab
+- Assets/Assets/Sprites/Yellow/FortifiedCamoYellow.png
+- Assets/Assets/Prefabs/Green/FortifiedGreen.prefab
+- Assets/Assets/Sprites/Yellow/FortifiedYellow.png
+- Assets/Assets/Sprites/White/FortifiedCamoRegrowWhite.png
+- Assets/Assets/Sprites/Pink/FortifiedCamoRegrowPink.png
+- Assets/Assets/Sprites/Zebra/FortifiedCamoZebra.png
+- Assets/Assets/Prefabs/Purple/FortifiedPurple.prefab
+- Assets/Assets/Prefabs/Purple/FortifiedCamoPurple.prefab
+- Assets/Assets/Prefabs/Blue/FortifiedCamoBlue.prefab
+- Assets/Assets/Sprites/Black/FortifiedBlack.png
+- Assets/Assets/Sprites/Pink/FortifiedPink.png
+- Assets/Assets/Prefabs/Black/FortifiedBlack.prefab
+- Assets/Assets/Sprites/Green/FortifiedCamoGreen.png
+- Assets/Assets/Prefabs/Yellow/FortifiedCamoRegrowYellow.prefab
+- Assets/Assets/Prefabs/Blue/FortifiedBlue.prefab
+- Assets/Assets/Sprites/Black/FortifiedCamoRegrowBlack.png
+- Assets/Assets/Prefabs/White/FortifiedWhite.prefab
+- Assets/Assets/Sprites/Black/FortifiedCamoBlack.png
+- Assets/Assets/Prefabs/Zebra/FortifiedCamoRegrowZebra.prefab
+- Assets/Assets/Prefabs/Pink/FortifiedCamoPink.prefab
+- Assets/Assets/Prefabs/Pink/FortifiedCamoRegrowPink.prefab
+- Assets/Assets/Sprites/Purple/FortifiedRegrowPurple.png
+- Assets/Assets/Prefabs/Red/FortifiedRegrowRed.prefab
+- Assets/Assets/Sprites/AllFortified.png
+- Assets/Assets/Prefabs/Green/FortifiedRegrowGreen.prefab
+- Assets/Assets/Prefabs/Rainbow/FortifiedCamoRainbow.prefab
+- Assets/Assets/Prefabs/Blue/FortifiedCamoRegrowBlue.prefab
+- Assets/Assets/Sprites/Red/FortifiedRed.png
+- Assets/Assets/Sprites/White/FortifiedRegrowWhite.png
+- Assets/Assets/Sprites/Rainbow/FortifiedRainbow.png
+- Assets/Assets/Sprites/Red/FortifiedCamoRegrowRed.png
+- Assets/Assets/Sprites/Blue/FortifiedBlue.png
+- Assets/Assets/Sprites/Yellow/FortifiedRegrowYellow.png
+- Assets/Assets/Sprites/Blue/FortifiedCamoBlue.png
+- Assets/Assets/Prefabs/Red/FortifiedCamoRegrowRed.prefab
+- Assets/Assets/Prefabs/TestBloon/FortifiedTestBloon.prefab
+- Assets/Assets/Sprites/Green/FortifiedRegrowGreen.png
+- Assets/Assets/Prefabs/Black/FortifiedCamoRegrowBlack.prefab
+- Assets/Assets/Prefabs/Black/FortifiedCamoBlack.prefab
+- Assets/Assets/Prefabs/Zebra/FortifiedCamoZebra.prefab
+- Assets/Assets/Prefabs/Yellow/FortifiedCamoYellow.prefab
+- Assets/Assets/Prefabs/White/FortifiedCamoRegrowWhite.prefab
+- Assets/Assets/Prefabs/Zebra/FortifiedZebra.prefab
+- Assets/Assets/Prefabs/Yellow/FortifiedRegrowYellow.prefab
+- Assets/Assets/Prefabs/Rainbow/FortifiedRegrowRainbow.prefab
+- Assets/Assets/Sprites/Green/FortifiedGreen.png
+- Assets/Assets/Sprites/Purple/FortifiedCamoRegrowPurple.png
+- Assets/Assets/Prefabs/Pink/FortifiedPink.prefab
+- Assets/Assets/Prefabs/Zebra/FortifiedRegrowZebra.prefab
+- Assets/Assets/Sprites/Red/FortifiedRegrowRed.png
+- Assets/Assets/Sprites/White/FortifiedWhite.png
+- Assets/Assets/Sprites/Rainbow/FortifiedCamoRegrowRainbow.png
+- Assets/Assets/Prefabs/Rainbow/FortifiedRainbow.prefab
+- Assets/Assets/Sprites/Blue/FortifiedRegrowBlue.png
+- Assets/Assets/Prefabs/Green/FortifiedCamoRegrowGreen.prefab
+- Assets/Assets/Sprites/Rainbow/FortifiedRegrowRainbow.png
+- Assets/Assets/Sprites/Rainbow/FortifiedCamoRainbow.png
+- Assets/Assets/Sprites/Purple/FortifiedPurple.png
+- Assets/Assets/Prefabs/Green/FortifiedCamoGreen.prefab
+- Assets/Assets/Prefabs/Yellow/FortifiedYellow.prefab
+- Assets/Assets/Prefabs/Red/FortifiedRed.prefab
+- Assets/Assets/Sprites/Pink/FortifiedRegrowPink.png
+- Assets/Assets/Prefabs/Purple/FortifiedCamoRegrowPurple.prefab
+- Assets/Assets/Prefabs/White/FortifiedRegrowWhite.prefab
+- Assets/Assets/Sprites/Zebra/FortifiedRegrowZebra.png
+- Assets/Assets/Prefabs/Black/FortifiedRegrowBlack.prefab
+- Assets/Assets/Sprites/TestBloon/FortifiedTestBloon.png
+- Assets/Assets/Sprites/White/FortifiedCamoWhite.png
+- Assets/Assets/Prefabs/White/FortifiedCamoWhite.prefab
 Dependencies: []

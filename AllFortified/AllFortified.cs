@@ -39,21 +39,29 @@ namespace AllFortified {
             return bloon;
         }
 
-        public static bool LoadDisplay(string name, Factory.__c__DisplayClass21_0 assetFactory, System.Action<UnityDisplayNode> onComplete) {
-            Sprite sprite = bundle.GetResource<Sprite>(name);
-            if (sprite is not null) {
-                assetFactory.__4__this.CreateAsync(new() { guidRef = "33adb905c9b871b44962fa3b9c3eb7de" }, new System.Action<UnityDisplayNode>(udn => {
-                    udn.gameObject.name = name;
-                    udn.IsSprite = true;
-                    udn.gameObject.GetComponentInChildren<SpriteRenderer>().sprite = sprite;
-                    onComplete?.Invoke(udn);
-                }));
-                return true;
-            }
-            return false;
+        public static GameObject LoadDisplay(string objectId) {
+            GameObject resource = bundle.GetResource<GameObject>(objectId);
+            if (resource is null)
+                return null;
+
+            GameObject display = Object.Instantiate(resource);
+            if (display is null)
+                return null;
+
+            return display;
         }
 
-        public static Sprite LoadSprite(string name) => bundle.GetResource<Sprite>(name);
+        public static Sprite LoadSprite(string name) {
+            if (string.IsNullOrEmpty(name))
+                return null;
+
+            int start = name.IndexOf('[');
+            int end = name.LastIndexOf(']');
+            if (start != -1 && end != -1)
+                name = name[(start + 1)..end];
+
+            return bundle.GetResource<Sprite>(name);
+        }
 
         public static Sprite LoadIcon() => bundle.GetResource<Sprite>("AllFortified");
 

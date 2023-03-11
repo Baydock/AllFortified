@@ -5,21 +5,23 @@ using Il2CppAssets.Scripts.Models;
 using Il2CppAssets.Scripts.Models.Bloons;
 using Il2CppAssets.Scripts.Models.Rounds;
 using Il2CppAssets.Scripts.Models.ServerEvents;
-using Il2CppAssets.Scripts.Unity.Display;
 using Il2CppAssets.Scripts.Unity.UI_New;
 using Il2CppAssets.Scripts.Unity.UI_New.ChallengeEditor;
 using Il2CppAssets.Scripts.Unity.UI_New.InGame;
 using Il2CppAssets.Scripts.Unity.UI_New.InGame.BloonMenu;
-using Il2CppAssets.Scripts.Utils;
-using Il2CppInterop.Runtime.InteropTypes.Arrays;
+using Il2CppInterop.Runtime;
 using Il2CppNinjaKiwi.Common;
 using MelonLoader;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.EventSystems;
-using UnityEngine.U2D;
+using UnityEngine.ResourceManagement;
+using UnityEngine.ResourceManagement.AsyncOperations;
+using UnityEngine.ResourceManagement.ResourceLocations;
+using UnityEngine.ResourceManagement.ResourceProviders;
 using UnityEngine.UI;
 
 [assembly: MelonInfo(typeof(AllFortified.Mod), "All Fortified", "1.0.1", "Baydock")]
@@ -256,33 +258,44 @@ namespace AllFortified {
 
         #region Asset Loading
 
-        [HarmonyPatch(typeof(Factory.__c__DisplayClass21_0), nameof(Factory.__c__DisplayClass21_0._CreateAsync_b__0))]
+        [HarmonyPatch(typeof(ResourceManager), nameof(ResourceManager.ProvideResource), typeof(IResourceLocation), typeof(Il2CppSystem.Type), typeof(bool))]
         [HarmonyPrefix]
-        public static bool LoadModels(Factory.__c__DisplayClass21_0 __instance, UnityDisplayNode prototype) {
-            string objectId = __instance.objectId.guidRef;
-            if (!string.IsNullOrEmpty(objectId) && prototype is null) {
-                return !AllFortified.LoadDisplay(objectId, __instance, udn => SetUpDisplay(udn, __instance.objectId, __instance));
-            }
-            return true;
-        }
-        private static void SetUpDisplay(UnityDisplayNode udn, PrefabReference protoRef, Factory.__c__DisplayClass21_0 assetFactory) {
-            udn.transform.parent = assetFactory.__4__this.DisplayRoot;
-            udn.Active = true;
-            udn.cloneOf = protoRef;
-            assetFactory.__4__this.active.Add(udn);
-            assetFactory.onComplete?.Invoke(udn);
-        }
+        public static bool LoadSprites(IResourceLocation location, Il2CppSystem.Type desiredType, ref AsyncOperationHandle __result) {
+            if (location is null || desiredType is null)
+                return true;
 
-        [HarmonyPatch(typeof(SpriteAtlas), nameof(SpriteAtlas.GetSprite))]
-        [HarmonyPrefix]
-        public static bool LoadSprites(ref Sprite __result, string name) {
-            if (!string.IsNullOrEmpty(name)) {
-                Sprite sprite = AllFortified.LoadSprite(name);
+            string asset = Path.GetFileName(location.InternalId);
+            if (string.IsNullOrEmpty(asset))
+                return true;
+
+            if (desiredType.Equals(Il2CppType.Of<Sprite>())) {
+                Sprite sprite = AllFortified.LoadSprite(asset);
                 if (sprite is not null) {
-                    __result = sprite;
+                    __result = Addressables.ResourceManager.CreateCompletedOperation(sprite, null);
                     return false;
                 }
             }
+
+            return true;
+        }
+
+        [HarmonyPatch(typeof(AddressablesImpl), nameof(AddressablesImpl.InstantiateAsync), typeof(Il2CppSystem.Object), typeof(InstantiationParameters), typeof(bool))]
+        [HarmonyPrefix]
+        public static bool LoadModels(Il2CppSystem.Object key, InstantiationParameters instantiateParameters, ref AsyncOperationHandle<GameObject> __result) {
+            if (key is null)
+                return true;
+
+            string asset = Path.GetFileName(key.ToString());
+            if (string.IsNullOrEmpty(asset))
+                return true;
+
+            GameObject display = AllFortified.LoadDisplay(asset);
+            if (display is not null) {
+                display.transform.parent = instantiateParameters.Parent;
+                __result = Addressables.ResourceManager.CreateCompletedOperation(display, null);
+                return false;
+            }
+
             return true;
         }
 
